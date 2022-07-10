@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#app{
+  max-width: 1144px;
+}
+header,
+main,
+footer{
+  margin: 0 10px;
+}
+
+/* The footer section */
+footer{
+  text-align: center;
+  padding-bottom: 227px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  /* header,
+  main,
+  footer{
+    width: 100%;
+    margin: 0 148px;
+  } */
+}
