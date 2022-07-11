@@ -37,4 +37,7 @@
         height: 45px;
         cursor: pointer;
     }
+    button:hover{
+        transform: scale(1.1);
+    }
 </style>
