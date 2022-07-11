@@ -4,9 +4,9 @@
 
 <template>
   <nav>
-    <div>
+    <RouterLink to="/">
       <img src="../assets/logo.svg" alt="dasdas logo">
-    </div>
+    </RouterLink>
     <ul>
       <li>
         <a href="#"><img src="./icon/twitter.svg" alt="twitter icon"></a>
@@ -23,7 +23,7 @@
     </ul>
   </nav>
 </template>
-
+ 
 <style scoped>
   nav{
     padding: 10px;

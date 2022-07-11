@@ -1,18 +1,11 @@
 <script setup>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue';
-import BlogPosts from './components/BlogPosts.vue';
+import Header from './components/Header.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header>
+ <header>
     <Header />
   </header>
-  <main>
-    <BlogPosts />
-  </main>
-  <footer>
-    <Footer />
-  </footer>
-
+  <RouterView/>
 </template>

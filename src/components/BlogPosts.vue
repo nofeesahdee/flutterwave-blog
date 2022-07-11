@@ -1,4 +1,5 @@
 <script>
+    import { RouterLink } from 'vue-router'
     export default {
         data () {
             return{
@@ -6,9 +7,10 @@
             }
         },
         mounted(){
-            fetch('https://techcrunch.com/wp-json/wp/v2/posts?page=2')
+            fetch('https://techcrunch.com/wp-json/wp/v2/posts')
             .then(response => response.json())
             .then(data => this.blogs = data)
+            .catch(error => console.log(error.message))
         },
     }
 </script>
@@ -19,20 +21,23 @@
             <img src="./icon/techcrunch.png" alt="techcrunch" class="card-header-image">
             <div class="blog-text">
                 <div class="date-time">
-                    <span>{{ blog.category }}</span>
-                    <span>{{ blog.date }}</span>
+                    <span v-html="blog.category"></span>
+                    <span v-html="blog.date"></span>
                 </div>
-                <h2>{{ blog.title.rendered }}</h2>
-                <p>{{ blog.excerpt.rendered }}</p>
+
+                <h2 v-html="blog.title.rendered"></h2>
+                <p v-html="blog.excerpt.rendered"></p>
+                
                 <div class="blog-link">
                     <span>10 min read</span>
-                    <button>
-                        Read More
-                        <img src="./icon/arrow.svg" alt="arrow">
-                    </button>
+                    <RouterLink :to="{name: 'BlogDetails', params: {id: blog.id}}">
+                        <button>
+                            Read More
+                            <img src="./icon/arrow.svg" alt="arrow">
+                        </button>
+                    </RouterLink>
                 </div>
             </div>
-             
         </div>
     </div>
 </template>
@@ -42,7 +47,7 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom:62px;
+    margin:50px 0 62px 0;
 }
 .blog-card{
     width: 350px;
@@ -76,6 +81,7 @@ p{
     display: flex;
     justify-content:space-between;
     font-size: 12px;
+    margin-top: 20px;
 }
 button{
     color: #1473E6;

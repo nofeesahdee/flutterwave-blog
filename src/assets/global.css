@@ -6,7 +6,6 @@
 body{
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 #app{
@@ -17,7 +16,9 @@ main,
 footer{
   margin: 0 10px;
 }
-
+a{
+  text-decoration: none;
+}
 /* The footer section */
 footer{
   text-align: center;
@@ -26,11 +27,8 @@ footer{
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  /* header,
-  main,
-  footer{
-    width: 100%;
-    margin: 0 148px;
-  } */
+@media (min-width: 1200px) {
+ nav{
+  width: 1144px;
+ }
 }
